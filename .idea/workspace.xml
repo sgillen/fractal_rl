@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d204a50-3086-4e79-b528-c4d4034c5853" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../bball/python/analysis.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bball/python/analyze_ars.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bball/analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bball/analyze_ars.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bball/call_matlab.py" beforeDir="false" afterPath="$PROJECT_DIR$/../bball/python/call_matlab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bball/train_bball3_stable.py" beforeDir="false" afterPath="$PROJECT_DIR$/../bball/python/train_bball3_stable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bball/train_bball_sg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../bball/python/train_bball_sg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bball/train_bball_stable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/EOM3Link.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/EOM3Link.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/animate.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/animate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/detectImpact.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/detectImpact.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/impact.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/impact.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/integrateODE.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/integrateODE.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/ode_torque.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/ode_torque.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/simulateModel.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/simulateModel.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/rl/ars/ars_pipe2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/rl/ars/ars_pipe2.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../bball" />
+  </component>
+  <component name="JupyterTrust" id="2f889989-8e98-4818-8680-64ac5be293bf" />
+  <component name="ProjectId" id="1feW2OjVDnWYRIZB6MjwXWzkAj8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bball" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Python.train_bball3_stable (1)">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="fractal_rl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bball3_env (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bball" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/python/bball3_env.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="roman_debug" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="fractal_rl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/roman_debug.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_bball3_stable (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bball" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/python/train_bball3_stable.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_bball3_stable" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bball" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/train_bball3_stable.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_bball_sg (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bball" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/python/train_bball_sg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.train_bball3_stable (1)" />
+        <item itemvalue="Python.train_bball_sg (1)" />
+        <item itemvalue="Python.bball3_env (1)" />
+        <item itemvalue="Python.roman_debug" />
+        <item itemvalue="Python.train_bball3_stable" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d204a50-3086-4e79-b528-c4d4034c5853" name="Default Changelist" comment="" />
+      <created>1596578830985</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596578830985</updated>
+      <workItem from="1596578832056" duration="2134000" />
+      <workItem from="1596581204323" duration="12090000" />
+      <workItem from="1597702361466" duration="1211000" />
+      <workItem from="1597710235179" duration="608000" />
+      <workItem from="1597789106946" duration="664000" />
+      <workItem from="1597872654628" duration="41138000" />
+      <workItem from="1597960823706" duration="1219000" />
+      <workItem from="1598050228876" duration="2846000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="961" y="416" key="FileChooserDialogImpl" timestamp="1597959136650">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="961" y="416" key="FileChooserDialogImpl/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1597959136650" />
+    <state x="3281" y="297" key="FileChooserDialogImpl/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1597934293645" />
+    <state x="3046" y="174" key="SettingsEditor" timestamp="1596581102611">
+      <screen x="2560" y="0" width="1920" height="1080" />
+    </state>
+    <state x="3046" y="174" key="SettingsEditor/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1596581102611" />
+    <state x="831" y="337" width="896" height="888" key="search.everywhere.popup" timestamp="1598051785318">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="831" y="337" width="896" height="888" key="search.everywhere.popup/0.27.2560.1413/2560.0.1600.900@0.27.2560.1413" timestamp="1598051785318" />
+    <state x="3183" y="237" width="672" height="678" key="search.everywhere.popup/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1597935202003" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_env.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

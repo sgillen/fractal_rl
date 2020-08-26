@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d204a50-3086-4e79-b528-c4d4034c5853" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../bball/python/analysis.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../bball/python/analyze_ars.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bball/analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bball/analyze_ars.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bball/call_matlab.py" beforeDir="false" afterPath="$PROJECT_DIR$/../bball/python/call_matlab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bball/train_bball3_stable.py" beforeDir="false" afterPath="$PROJECT_DIR$/../bball/python/train_bball3_stable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bball/train_bball_sg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../bball/python/train_bball_sg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bball/train_bball_stable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fractal_rl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fractal_rl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/.ipynb_checkpoints/mesh_scratch-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/.ipynb_checkpoints/mesh_scratch-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/mesh_scratch.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/code/mesh_scratch.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/EOM3Link.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/EOM3Link.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/animate.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/animate.m" afterDir="false" />
@@ -19,6 +18,9 @@
       <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/ode_torque.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/ode_torque.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/simulateModel.m" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/envs/matlab/bball3_src/simulateModel.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../seagul/seagul/rl/ars/ars_pipe2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/rl/ars/ars_pipe2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/rl/run_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/rl/run_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ssac/switched_rl/gate_generation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../ssac/switched_rl/gate_generation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ssac/switched_rl/sac.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ssac/switched_rl/sac.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +62,12 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bball" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ssac" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Python.train_bball3_stable (1)">
+  <component name="RunManager" selected="Python.train_bball_sac">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="fractal_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -92,6 +94,9 @@
       <module name="bball" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball/python" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -133,6 +138,9 @@
       <module name="bball" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball/python" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -148,7 +156,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_bball3_stable" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="train_bball_ars" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="bball" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,12 +164,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball/python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/train_bball3_stable.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/python/train_bball_ars.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,17 +178,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_bball_sg (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="train_bball_sac" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="bball" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bball/python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/python/train_bball_sg.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bball/python/train_bball_sac.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -191,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.train_bball_sac" />
         <item itemvalue="Python.train_bball3_stable (1)" />
-        <item itemvalue="Python.train_bball_sg (1)" />
+        <item itemvalue="Python.train_bball_ars" />
         <item itemvalue="Python.bball3_env (1)" />
         <item itemvalue="Python.roman_debug" />
-        <item itemvalue="Python.train_bball3_stable" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +225,8 @@
       <workItem from="1597789106946" duration="664000" />
       <workItem from="1597872654628" duration="41138000" />
       <workItem from="1597960823706" duration="1219000" />
-      <workItem from="1598050228876" duration="2846000" />
+      <workItem from="1598050228876" duration="7767000" />
+      <workItem from="1598254023372" duration="2054000" />
     </task>
     <servers />
   </component>
@@ -222,15 +234,20 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="961" y="416" key="FileChooserDialogImpl" timestamp="1597959136650">
+    <state x="961" y="416" key="FileChooserDialogImpl" timestamp="1598250579753">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
+    <state x="961" y="416" key="FileChooserDialogImpl/0.27.2560.1413/2560.0.1600.900@0.27.2560.1413" timestamp="1598250579753" />
     <state x="961" y="416" key="FileChooserDialogImpl/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1597959136650" />
     <state x="3281" y="297" key="FileChooserDialogImpl/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1597934293645" />
     <state x="3046" y="174" key="SettingsEditor" timestamp="1596581102611">
       <screen x="2560" y="0" width="1920" height="1080" />
     </state>
     <state x="3046" y="174" key="SettingsEditor/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1596581102611" />
+    <state x="2560" y="0" width="1600" height="900" key="dock-window-1" timestamp="1598251929520">
+      <screen x="2560" y="0" width="1600" height="900" />
+    </state>
+    <state x="2560" y="0" width="1600" height="900" key="dock-window-1/0.27.2560.1413/2560.0.1600.900@0.27.2560.1413" timestamp="1598251929520" />
     <state x="831" y="337" width="896" height="888" key="search.everywhere.popup" timestamp="1598051785318">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>

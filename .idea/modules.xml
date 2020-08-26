@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/../contact/.idea/contact.iml" filepath="$PROJECT_DIR$/../contact/.idea/contact.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/fractal_rl.iml" filepath="$PROJECT_DIR$/.idea/fractal_rl.iml" />
       <module fileurl="file://$PROJECT_DIR$/../seagul/.idea/seagul.iml" filepath="$PROJECT_DIR$/../seagul/.idea/seagul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ssac/.idea/ssac.iml" filepath="$PROJECT_DIR$/../ssac/.idea/ssac.iml" />
     </modules>
   </component>
 </project>

@@ -7,7 +7,7 @@ import os
 import time
 from ars import ars
 from common import *
-
+from seagul.rl.ars.ars_pipe2 import ARSAgent
 
 env_names = ["HalfCheetah-v2", "Hopper-v2", "Walker2d-v2"]
 init_names = ["identity", "madodiv", "identity"]
@@ -22,8 +22,9 @@ n_workers = 24
 n_delta = 60
 n_top = 20
 exp_noise = .025
+n_postprocess_runs = 5
 
-save_dir = "./data_mdimtest0/"
+save_dir = "./data_mdim_mep/"
 os.makedirs(save_dir)
 
 
@@ -38,6 +39,7 @@ for env_name, init_name in zip(env_names, init_names):
     in_size = env.observation_space.shape[0]
     out_size = env.action_space.shape[0]
     policy_dict = {fn.__name__: [] for fn in post_fns}
+    agent_dict = {fn.__name__: [] for fn in post_fns}
 
     rewards = xr.DataArray(np.zeros((num_experiments, num_seeds, num_epochs)),
                            dims=("post", "trial", "epoch"),
@@ -51,26 +53,29 @@ for env_name, init_name in zip(env_names, init_names):
         {"rews": rewards,
          "post_rews": post_rewards},
         coords={"post": [fn.__name__ for fn in post_fns]},
-        attrs={"policy_dict": policy_dict, "post_fns": post_fns, "env_name": env_name,
+        attrs={"policy_dict": policy_dict, "agent_dict": agent_dict, "post_fns": post_fns, "env_name": env_name,
                "hyperparams": {"num_experiments": num_experiments, "num_seeds": num_seeds, "num_epochs": num_epochs,
                                "n_workers": n_workers, "n_delta": n_delta, "n_top": n_top, "exp_noise": exp_noise},
                "env_config": env_config})
 
     for post_fn in post_fns:
-        for i in range(num_seeds):
+        for i, seed in range(num_seeds):
             print(f'starting env {env_name} with initial policy {init_name}')
             policy = init_policy_dict[init_name][i]
             try:
-                policy, r_hist, lr_hist = ars(env_name, policy, num_epochs, n_workers=n_workers, n_delta=n_delta,
-                                              n_top=n_top, exp_noise=exp_noise, postprocess=post_fn,
-                                              env_config=env_config, zero_policy=False)
+                agent = ARSAgent(env_name, policy, seed, n_workers=n_workers, n_delta=n_delta,
+                                 n_top=n_top, exp_noise=exp_noise, postprocessor=post_fn,
+                                 env_config=env_config, n_postprocess_runs=n_postprocess_runs)
+
+                agent.learn(num_epochs)
             except:
                 print("something broke")
                 bad_list.append((post_fn.__name__, i))
 
             print(f"{env_name}, {post_fn.__name__}, {i}, {time.time() - start}")
             data.policy_dict[post_fn.__name__].append(copy.deepcopy(policy))
-            data.rews.loc[post_fn.__name__, i, :] = lr_hist
-            data.post_rews.loc[post_fn.__name__, i, :] = r_hist
+            data.agent_dict[post_fn.__name__].append(copy.deepcopy(agent))
+            data.rews.loc[post_fn.__name__, i, :] = agent.lr_hist
+            data.post_rews.loc[post_fn.__name__, i, :] = agent.r_hist
 
     torch.save(data, f"{save_dir}{env_name}.xr")

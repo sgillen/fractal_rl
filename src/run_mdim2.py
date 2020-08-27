@@ -12,19 +12,19 @@ from seagul.rl.ars.ars_pipe2 import ARSAgent
 env_names = ["HalfCheetah-v2", "Hopper-v2", "Walker2d-v2"]
 init_names = ["identity", "madodiv", "identity"]
 
-post_fns = [cdim_div, mdim_div]
+post_fns = [mdim_div2]
 
 torch.set_default_dtype(torch.float64)
 num_experiments = len(post_fns)
-num_seeds = 2
-num_epochs = 2
-n_workers = 24
+num_seeds = 10
+num_epochs = 250
+n_workers = 12
 n_delta = 60
 n_top = 20
 exp_noise = .025
 n_postprocess_runs = 5
 
-save_dir = "./data_mdim_mep/"
+save_dir = "./data_mdim_npp"
 os.makedirs(save_dir)
 
 
@@ -59,7 +59,7 @@ for env_name, init_name in zip(env_names, init_names):
                "env_config": env_config})
 
     for post_fn in post_fns:
-        for i, seed in range(num_seeds):
+        for i, seed in enumerate(np.random.randint(0,2**32-1,num_seeds)):
             print(f'starting env {env_name} with initial policy {init_name}')
             policy = init_policy_dict[init_name][i]
             try:
@@ -78,4 +78,4 @@ for env_name, init_name in zip(env_names, init_names):
             data.rews.loc[post_fn.__name__, i, :] = agent.lr_hist
             data.post_rews.loc[post_fn.__name__, i, :] = agent.r_hist
 
-    torch.save(data, f"{save_dir}{env_name}.xr")
+    torch.save(data, f"{save_dir}/{env_name}.xr")

@@ -21,6 +21,28 @@ def radodiv(rews, obs, acts):
     return rews/variation_dim(obs, order=.5)
 
 
+def mdim_div2(obs_list, act_list, rew_list):
+
+    combined_obs = torch.empty(0)
+    combined_rew = torch.empty(0)
+    m = None
+    
+    for obs,rew in  zip(obs_list, rew_list):
+        if obs.shape[0] == 1000:
+            gait_start = 200
+            combined_obs = torch.cat((combined_obs, obs[gait_start:]))
+            combined_rew = torch.cat((combined_rew, rew))
+        else:
+            m = obs.shape[1] / 2
+
+
+    if m is None:
+        m,_,_,_ = mesh_dim(combined_obs)
+        m = np.clip(m, 1, obs.shape[1] / 2)
+
+    return (combined_rew / m).sum()
+
+
 def mdim_div(rews, obs, acts):
     if obs.shape[0] == 1000:
         gait_start = 200

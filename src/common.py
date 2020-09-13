@@ -20,7 +20,6 @@ def variodiv(rews, obs, acts):
 def radodiv(rews, obs, acts):
     return rews/variation_dim(obs, order=.5)
 
-
 def mdim_div2(obs_list, act_list, rew_list):
 
     combined_obs = torch.empty(0)
@@ -115,11 +114,14 @@ def do_long_rollout(env, policy, ep_length):
     cur_step = 0
 
     while cur_step < ep_length:
-        obs = torch.as_tensor(obs, dtype=dtype).detach()
+        obs = torch.as_tensor(obs, dtype=dtype)
         obs_list.append(obs.clone())
 
         act = policy(obs)
         obs, rew, done, _ = env.step(act.numpy())
+
+        # if ep_length > 500 and rew < 0:
+        #     env.render()
 
         act_list.append(torch.as_tensor(act.clone()))
         rew_list.append(rew)
@@ -131,6 +133,19 @@ def do_long_rollout(env, policy, ep_length):
     ep_act = torch.stack(act_list)
     ep_rew = torch.tensor(rew_list, dtype=dtype)
     ep_rew = ep_rew.reshape(-1, 1)
+
+    # if ep_rew.sum() < 0:
+    #     while True:
+    #         obs = torch.as_tensor(obs, dtype=dtype)
+    #         obs_list.append(obs.clone())
+            
+    #         act = policy(obs)
+    #         obs, rew, done, _ = env.step(act.numpy())
+
+    #         env.step(act)
+    #         env.render()
+    #         time.sleep(.01)
+                
 
     torch.autograd.set_grad_enabled(True)
     return ep_obs, ep_act, ep_rew, ep_length

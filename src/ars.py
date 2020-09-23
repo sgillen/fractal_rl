@@ -1,7 +1,8 @@
 import gym
 import torch
-from torch.multiprocessing import Process,Pipe
+from multiprocessing import Process,Pipe
 from common import MLP
+import os
 
 
 def postprocess_default(rews, obs, acts):
@@ -9,6 +10,7 @@ def postprocess_default(rews, obs, acts):
 
 
 def ars(env_name, policy, n_epochs, env_config={}, n_workers=8, step_size=.02, n_delta=32, n_top=16, exp_noise=0.03, zero_policy=True, postprocess=postprocess_default):
+    torch.multiprocessing.set_sharing_strategy('file_system')    
     torch.autograd.set_grad_enabled(False)
     """
     Augmented Random Search
@@ -50,15 +52,19 @@ def ars(env_name, policy, n_epochs, env_config={}, n_workers=8, step_size=.02, n
     
     """
 
+#    import ipdb; print(f"main_thread:{os.getpid()})"); ipdb.set_trace()
+    
     proc_list = []
     master_pipe_list = []
 
     for i in range(n_workers):
-        master_con, worker_con= Pipe()
+        master_con, worker_con = Pipe()
         proc = Process(target=worker_fn, args=(worker_con, env_name, env_config, policy, postprocess))
         proc.start()
         proc_list.append(proc)
         master_pipe_list.append(master_con)
+
+ #   import ipdb; print(f"main_thread:{os.getpid()})"); ipdb.set_trace()
 
     W = torch.nn.utils.parameters_to_vector(policy.parameters())
     n_param = W.shape[0]
@@ -88,7 +94,7 @@ def ars(env_name, policy, n_epochs, env_config={}, n_workers=8, step_size=.02, n
         results = []
         for i, _ in enumerate(pm_W):
             results.append(master_pipe_list[i % n_workers].recv())
-
+        
         states = torch.empty(0)
         p_returns = []
         m_returns = []
@@ -117,14 +123,20 @@ def ars(env_name, policy, n_epochs, env_config={}, n_workers=8, step_size=.02, n
         s_mean = update_mean(states, s_mean, total_steps)
         s_std = update_std(states, s_std, total_steps)
         total_steps += ep_steps
-
+        
         if epoch % 5 == 0:
             print(f"epoch: {epoch}, reward: {lr_hist[-1].item()}, processed reward: {r_hist[-1].item()} ")
 
         W = W + (step_size / (n_delta * torch.cat((p_returns, m_returns)).std() + 1e-6)) * torch.sum((p_returns - m_returns)*deltas[top_idx].T, dim=1)
 
+
+    #import ipdb; print(f"main_thread:{os.getpid()})"); ipdb.set_trace()
     for pipe in master_pipe_list:
         pipe.send("STOP")
+
+    for proc in proc_list:
+        proc.join()
+        
     policy.state_means = s_mean
     policy.state_std = s_std
     torch.nn.utils.vector_to_parameters(W, policy.parameters())
@@ -150,6 +162,7 @@ def update_std(data, cur_std, cur_steps):
 
 
 def worker_fn(worker_con, env_name, env_config, policy, postprocess):
+
     env = gym.make(env_name, **env_config)
     epoch = 0
 
@@ -157,6 +170,7 @@ def worker_fn(worker_con, env_name, env_config, policy, postprocess):
         data = worker_con.recv()
 
         if data == "STOP":
+            print(f"worker {os.getpid()} closing shop")
             env.close()
             return
         else:
@@ -171,8 +185,7 @@ def worker_fn(worker_con, env_name, env_config, policy, postprocess):
 
 
 def do_rollout_train(env, policy, postprocess, W):
-    torch.nn.utils.vector_to_parameters(W, policy.parameters())
-
+    torch.nn.utils.vector_to_parameters(W, policy.parameters())    
     state_list = []
     act_list = []
     reward_list = []

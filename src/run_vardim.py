@@ -6,20 +6,25 @@ import time
 import xarray as xr
 import numpy as np
 import os
+import pybullet_envs
 
-env_names = ["Humanoid-v2"]
-post_fns = [identity]# variodiv, madodiv]
+
+env_names = ["MinitaurBulletEnv-v0"]#["HalfCheetah-v2"]#, "Hopper-v2", "Walker2d-v2"]
+post_fns = [identity]
+
+# env_names = ["Humanoid-v2"]
+# post_fns = [identity]# variodiv, madodiv]
 
 torch.set_default_dtype(torch.float64)
 num_experiments = len(post_fns)
-num_seeds = 2
-num_epochs = 10
-n_workers = 8
-n_delta = 240
-n_top = 240
-exp_noise =.0075
+num_seeds = 10
+num_epochs = 200
+n_workers = 12
+n_delta = 60
+n_top = 20
+exp_noise =.025
 
-save_dir = "./data_test0/"
+save_dir = "./data_pb3/"
 env_config = {}
 
 os.makedirs(f"{save_dir}")

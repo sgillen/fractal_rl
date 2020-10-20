@@ -3,14 +3,14 @@ import torch
 from multiprocessing import Process,Pipe
 from common import MLP
 import os
-
+import numpy as np
 
 def postprocess_default(rews, obs, acts):
     return rews
 
 
 def ars(env_name, policy, n_epochs, env_config={}, n_workers=8, step_size=.02, n_delta=32, n_top=16, exp_noise=0.03, zero_policy=True, postprocess=postprocess_default):
-    torch.multiprocessing.set_sharing_strategy('file_system')    
+    #torch.multiprocessing.set_sharing_strategy('file_system')    
     torch.autograd.set_grad_enabled(False)
     """
     Augmented Random Search
@@ -174,29 +174,40 @@ def worker_fn(worker_con, env_name, env_config, policy, postprocess):
             env.close()
             return
         else:
+            #print(f"worker {os.getpid()} got rollout request")
             W,state_mean,state_std = data
 
             policy.state_std = state_std
             policy.state_means = state_mean
 
             states, returns, log_returns = do_rollout_train(env, policy, postprocess, W)
+            #print(f"worker {os.getpid()} rollout finished sending return")
             worker_con.send((states, returns, log_returns))
+            #print(f"worker {os.getpid()} return sent")
             epoch +=1
 
 
-def do_rollout_train(env, policy, postprocess, W):
+def do_rollout_train(env, policy, postprocess, W, obs_std=0, act_std=0):
     torch.nn.utils.vector_to_parameters(W, policy.parameters())    
     state_list = []
     act_list = []
     reward_list = []
 
-    obs = env.reset()
+    obs_size = env.observation_space.shape[0]
+    act_size = env.action_space.shape[0]
+
+    obs = torch.as_tensor(env.reset())
     done = False
     while not done:
-        state_list.append(torch.as_tensor(obs))
+        state_list.append(obs)
 
-        actions = policy(torch.as_tensor(obs))
-        obs, reward, done, _ = env.step(actions)
+        actions = policy(obs)
+        actions += torch.randn(act_size)*act_std
+
+        obs, reward, done, _ = env.step(np.clip(np.asarray(actions), -1, 1))
+        obs = torch.as_tensor(obs)
+        obs += torch.randn(obs_size)*obs_std
+
 
         act_list.append(torch.as_tensor(actions))
         reward_list.append(reward)

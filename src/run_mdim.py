@@ -12,18 +12,18 @@ from common import *
 env_names = ["HalfCheetah-v2", "Hopper-v2", "Walker2d-v2"]
 init_names = ["identity", "madodiv", "identity"]
 
-post_fns = [cdim_div, mdim_div]
+post_fns = [mdim_div]
 
 torch.set_default_dtype(torch.float64)
 num_experiments = len(post_fns)
-num_seeds = 2
-num_epochs = 2
-n_workers = 24
+num_seeds = 10
+num_epochs = 250
+n_workers = 12
 n_delta = 60
 n_top = 20
 exp_noise = .025
 
-save_dir = "./data_mdimtest0//"
+save_dir = "./data_noise1_mdim/"
 os.makedirs(save_dir)
 
 
@@ -31,7 +31,7 @@ start = time.time()
 env_config = {}
 bad_list = []
 for env_name, init_name in zip(env_names, init_names):
-    init_data = torch.load(f"./data17/{env_name}.xr")
+    init_data = torch.load(f"./data_noise1/{env_name}.xr")
     init_policy_dict = init_data.policy_dict
 
     env = gym.make(env_name, **env_config)

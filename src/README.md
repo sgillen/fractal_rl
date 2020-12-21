@@ -2,6 +2,8 @@
 
 This directory contains the code required to replicate the results presented in the manuscript.
 
+Note: this repo is still being used for active research extending the results from the CORL submission, and no attempts have been made to clean this new code up. if you would like to see the repository as it was for the reviewers, please simply check out the original commit. 
+
 - common.py - Contains functions needed everywhere, this includes algorithms 1 and 2 from the paper.
 - ars.py - Our implementation of ars.
 - run_vardim.py - Code to run ars with the variation dimension post processors, as presented in figure 1 of the paper.

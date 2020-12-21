@@ -1,8 +1,6 @@
 
 # Shrinking Fractional Dimensions With Reinforcement Learning
 
-This folder contains supplementary material for a CORL 2020 submission. The file contents should include: 
+This repo contains code to accompany the CORL 2020 paper: Explicitly Encouraging Low Fractional Dimensional Trajectories Via Reinforcement Learning. The root directory contains the original manuscript as a pdf, a short video, and the source code to replicate the results found in the paper.  
 
-- corl.mp4 - A short video giving an overview of the work.
-- code/ - All the code required to replicate the results of the paper.
-- corl_update.pdf - A copy of the manuscript including a page of extra explanatory materials. This copy also includes a few fixed typos, but no major changes, and the original submission is still provided as is. 
+The source code most notably contains a modified implementation of Augmented Random Search which modifies rewards obtained from reinforcement learning environments in order to explicitly encourage agents to find policies which induce trajectories with a small fractional dimension. There are also notebooks which analyze the resulting policies.

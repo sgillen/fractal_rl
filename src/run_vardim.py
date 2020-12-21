@@ -9,22 +9,22 @@ import os
 import pybullet_envs
 
 
-env_names = ["MinitaurBulletEnv-v0"]#["HalfCheetah-v2"]#, "Hopper-v2", "Walker2d-v2"]
-post_fns = [identity]
+#env_names = ["MinitaurBulletEnv-v0"]#["HalfCheetah-v2"]#, "Hopper-v2", "Walker2d-v2"]
+#post_fns = [identity]
 
-# env_names = ["Humanoid-v2"]
-# post_fns = [identity]# variodiv, madodiv]
+env_names = ["Humanoid-v2"]
+post_fns = [identity]# variodiv, madodiv]
 
 torch.set_default_dtype(torch.float64)
 num_experiments = len(post_fns)
-num_seeds = 10
-num_epochs = 200
+num_seeds = 2
+num_epochs = 2
 n_workers = 12
-n_delta = 60
-n_top = 20
-exp_noise =.025
+n_delta = 240
+n_top = 240
+exp_noise =.00075
 
-save_dir = "./data_pb3/"
+save_dir = "./data_hm0/"
 env_config = {}
 
 os.makedirs(f"{save_dir}")

@@ -182,7 +182,7 @@ def worker_fn(worker_con, env_name, env_config, policy, postprocess):
 
             states, returns, log_returns = do_rollout_train(env, policy, postprocess, W)
             #print(f"worker {os.getpid()} rollout finished sending return")
-            worker_con.send((states, returns, log_returns))
+            worker_con.send((np.array(states), np.array(returns), np.array(log_returns)))
             #print(f"worker {os.getpid()} return sent")
             epoch +=1
 

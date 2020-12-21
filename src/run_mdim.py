@@ -7,31 +7,36 @@ import os
 import time
 from ars import ars
 from common import *
+import pybullet_envs
 
 
-env_names = ["HalfCheetah-v2", "Hopper-v2", "Walker2d-v2"]
-init_names = ["identity", "madodiv", "identity"]
+# env_names = ["HalfCheetah-v2", "Hopper-v2", "Walker2d-v2"]
+# init_names = ["identity", "madodiv", "identity"]
 
+env_names = ["MinitaurBulletEnv-v0"]#["HalfCheetah-v2"]#, "Hopper-v2", "Walker2d-v2"]
+init_names = ["identity"]
 post_fns = [mdim_div]
+
+init_dir = "./data_pb3/"
+save_dir = "./data_pb3_mdim_long/"
+
+assert not os.path.isdir(save_dir)
 
 torch.set_default_dtype(torch.float64)
 num_experiments = len(post_fns)
 num_seeds = 10
-num_epochs = 250
+num_epochs = 200
 n_workers = 12
 n_delta = 60
 n_top = 20
 exp_noise = .025
 
-save_dir = "./data_noise1_mdim/"
-os.makedirs(save_dir)
-
-
 start = time.time()
 env_config = {}
 bad_list = []
+
 for env_name, init_name in zip(env_names, init_names):
-    init_data = torch.load(f"./data_noise1/{env_name}.xr")
+    init_data = torch.load(f"{init_dir}{env_name}.xr")
     init_policy_dict = init_data.policy_dict
 
     env = gym.make(env_name, **env_config)
@@ -73,4 +78,5 @@ for env_name, init_name in zip(env_names, init_names):
             data.rews.loc[post_fn.__name__, i, :] = lr_hist
             data.post_rews.loc[post_fn.__name__, i, :] = r_hist
 
+    os.makedirs(save_dir)
     torch.save(data, f"{save_dir}{env_name}.xr")

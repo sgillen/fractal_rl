@@ -1,5 +1,5 @@
 
-# Shrinking Fractional Dimensions With Reinforcement Learning
+# Shrinking Fractional Dimensions With Reinforcement Learning For Fun and Profit.
 
 This repo contains code to accompany the CORL 2020 paper: Explicitly Encouraging Low Fractional Dimensional Trajectories Via Reinforcement Learning. The root directory contains the original manuscript as a pdf, a short video, and the source code to replicate the results found in the paper.  
 
